@@ -27,7 +27,7 @@ void ShowInitials(char arr[])
             }
             else if (spaceFound == 1 && doneOnce)
             {
-                for (int j = i++; j < sizeof(arr) / sizeof(char); j++)
+                for (int j = i - 1; j < sizeof(arr) / sizeof(char) + 4; j++)
                 {
                     cout << arr[j];
                 }

@@ -1,18 +1,11 @@
-// Program8_pi.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// ConsoleApplication1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 
-using namespace std;
-
 int main()
 {
-    const float pi = 3.14159;
-
-    float radius = 25.0f;
-    float areaOfCircle = pi * radius * radius;
-
-    cout << "The area of a circle with radius " << radius << " is " << areaOfCircle << endl;
+    std::cout << "Hello World!\n";
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

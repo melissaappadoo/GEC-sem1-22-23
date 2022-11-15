@@ -22,27 +22,24 @@ int main()
         cout << " " << endl;
     }
 
-    char choice = 'y';
+    char choice;
 
-    while (choice != 'N' || choice != 'n')
+    cout << "Do you want another go? " << endl;
+    cin >> choice;
+
+    while (choice == 'Y' || choice == 'y')
     {
-        cout << "Do you want another go? " << endl;
-        cin >> choice;
+        //cout << choice;
+        cout << "Enter a number between 1 and 10: " << endl;
+        cin >> inputNum;
 
-        if (choice != 'N' || choice != 'n')
+        cout << endl;
+
+        for (int i = 0; i < inputNum; i++)
         {
-            cout << "Enter a number between 1 and 10: " << endl;
-            cin >> inputNum;
-
-            cout << endl;
-
-            for (int i = 0; i < inputNum; i++)
+            for (int n = 0; n < i + 1; n++)
             {
-                for (int n = 0; n < i + 1; n++)
-                {
-                    cout << "*";
-                }
-                cout << " " << endl;
+                cout << "*";
             }
         }
     }

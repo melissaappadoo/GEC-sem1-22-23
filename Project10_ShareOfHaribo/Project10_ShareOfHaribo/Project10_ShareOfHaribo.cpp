@@ -3,9 +3,15 @@
 
 #include <iostream>
 
+using namespace std;
+
 int main()
 {
-    std::cout << "Hello World!\n";
+    int packetsAvailable = 40;
+    int students = 14;
+
+    cout << packetsAvailable / students << " for each student" << endl;
+    cout << packetsAvailable % students << " left for you" << endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
