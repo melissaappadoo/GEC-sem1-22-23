@@ -1,32 +1,34 @@
-// Program4_userDefinedVars.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// Program36_UsingReferences.cpp : This file contains the 'main' function. Program execution begins and ends there.
 //
 
 #include <iostream>
 
 using namespace std;
 
+int plus25(int& rNum)
+{
+    rNum += 25;
+    return rNum;
+}
+
+int minus25(int& rNum)
+{
+    rNum -= 25;
+    return rNum;
+}
+
 int main()
 {
-    typedef int health;
-
-    enum Weapons
-    {
-        SWORD,
-        DAGGER,
-        MACE,
-        TWIN_SWORDS,
-        SAMURAI,
-        WIZARD_STAFF,
-        FIRE_POTION,
-        ICE_BLADE,
-        SMALL_KNIFE
-    };
-
-    health healthNumber = 13000;
-    Weapons currentWeapon = SAMURAI;
-
-    cout << "My current health is: " << healthNumber << endl;
-    cout << "And the ID of my weapon of choice is: " << currentWeapon + 1 << endl;
+    int num;
+    int& rNum = num;
+    cout << "Enter a number: " << endl;
+    cin >> rNum;
+    cout << num << endl;
+    cout << plus25(rNum) << endl;
+    cout << "Enter another number: " << endl;
+    cin >> rNum;
+    cout << num << endl;
+    cout << minus25(rNum);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
