@@ -27,8 +27,12 @@ void ShowInitials(char arr[])
             }
             else if (spaceFound == 1 && doneOnce)
             {
-                for (int j = i - 1; j < sizeof(arr) / sizeof(char) + 4; j++)
+                for (int j = i + 1; j < sizeof(arr) / sizeof(char) + INT_MAX; j++)
                 {
+                    if (arr[j] == NULL)
+                    {
+                        return;
+                    }
                     cout << arr[j];
                 }
             }
