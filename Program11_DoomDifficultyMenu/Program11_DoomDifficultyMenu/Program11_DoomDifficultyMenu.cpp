@@ -32,7 +32,7 @@ int main()
             cout << "Just FYI, they will shoot back";
             break;
         case 5:
-            cout << "omds";
+            cout << "oh no";
             break;
         default:
             break;
