@@ -16,7 +16,14 @@ Score loadedScores[];
 
 void enterScore()
 {
-
+    string name;
+    int score;
+    cout << "Enter a name: " << endl;
+    cin >> name;
+    cout << "Enter a score: " << endl;
+    cin >> score;
+    cout << endl;
+    saveScores(name, score);
 }
 
 void countScores()
@@ -29,14 +36,25 @@ void displayScore()
 
 }
 
-void saveScores()
+void saveScores(string name, int score)
+{
+    ofstream outFile("Score.txt", ios::out);
+    if (!outFile.is_open())
+    {
+        cerr << "File not open" << endl;
+    }
+    outFile << name << endl;
+    outFile << score << endl;
+    outFile.close();
+}
+
+void loadScores()
 {
 
 }
 
 int main()
 {
-    ofstream outFile;
     bool running = true;
     int choice;
 
@@ -49,18 +67,23 @@ int main()
         if (choice == 1)
         {
             enterScore();
+            running = false;
         }
         else if (choice == 2)
         {
             countScores();
             displayScore();
+            running = false;
         }
         else if (choice == 3)
         {
-            saveScores();
+            running = false;
         }
         else
         {
+            cout << "1. Enter a score" << endl;
+            cout << "2. Displacy scores" << endl;
+            cout << "3. Exit" << endl;
             cout << "Please enter a valid choice: " << endl;
             cin >> choice;
         }

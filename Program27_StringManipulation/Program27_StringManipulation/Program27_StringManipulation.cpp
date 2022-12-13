@@ -5,14 +5,14 @@
 
 using namespace std;
 
-string InsertName(string testString, string name) {
-    cout << testString.insert(testString.find("X") + 1, name) << endl;
-    return testString;
+void InsertName(string testString, string name1, string name2) {
+    cout << testString.insert(testString.find("X") + 1, name1) << endl;
+    cout << testString.replace(testString.find(name1), name1.size(), name2) << endl;
 }
 
-string ReplaceX(string testString, string name) {
-    cout << testString.replace(testString.find("X"), 2, name) << endl;
-    return testString;
+void ReplaceX(string testString, string name1, string name2) {
+    cout << testString.replace(testString.find("X"), 2, name1) << endl;
+    cout << testString.replace(testString.find(name1), name1.size(), name2) << endl;
 }
 
 int main()
@@ -21,17 +21,13 @@ int main()
     string name2;
     cout << "Enter your name: " << endl;
     cin >> name1;
-    while (name2.empty()) {
+    while (name2.size() < name1.size()) {
         cout << "Enter another name (must be longer): " << endl;
         cin >> name2;
-        if (name2.size() > name1.size()) {
-            name2 = "";
-            cout << "The name must be longer" << endl;
-        }
     }
     string testString = "Do you know who loves C++ XX does!";
-    InsertName(testString, name1);
-    ReplaceX(testString, name1);
+    InsertName(testString, name1, name2);
+    ReplaceX(testString, name1, name2);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
