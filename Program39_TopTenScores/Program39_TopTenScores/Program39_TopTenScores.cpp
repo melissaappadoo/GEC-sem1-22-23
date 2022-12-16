@@ -3,6 +3,8 @@
 
 #include <iostream>
 #include <fstream>
+#include <iomanip>
+#include <string>
 
 using namespace std;
 
@@ -13,6 +15,17 @@ struct Score
 };
 
 Score loadedScores[];
+
+void saveScores(string name, int score)
+{
+    ofstream outFile("Score.txt", ios::out);
+    if (!outFile.is_open())
+    {
+        cerr << "File not open" << endl;
+    }
+    outFile << name << ", " << score << endl;
+    outFile.close();
+}
 
 void enterScore()
 {
@@ -36,21 +49,20 @@ void displayScore()
 
 }
 
-void saveScores(string name, int score)
-{
-    ofstream outFile("Score.txt", ios::out);
-    if (!outFile.is_open())
-    {
-        cerr << "File not open" << endl;
-    }
-    outFile << name << endl;
-    outFile << score << endl;
-    outFile.close();
-}
-
 void loadScores()
 {
+    ifstream inFile("Score.txt", ios::in);
+    string score;
+    string name;
+    int commaCount;
+    string lineOfText;
+    if (inFile.is_open())
+    {
+        /*while (getline(inFile, lineOfText)
+        {
 
+        }*/
+    }
 }
 
 int main()

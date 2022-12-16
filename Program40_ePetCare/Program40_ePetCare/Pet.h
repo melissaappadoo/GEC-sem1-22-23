@@ -2,21 +2,6 @@
 #ifndef PET_H
 #define PET_H
 
-class Dog
-{
-
-};
-
-class Cat
-{
-
-};
-
-class Hamster 
-{
-
-};
-
 class Pet
 {
 public:
@@ -28,9 +13,26 @@ public:
 private:
 	int m_hunger = 0;
 	int m_bored = 0;
+	Pet* petPtr;
 protected:
-	void GetMood() const { m_hunger + m_bored; }
+	int GetMood() const { return m_hunger + m_bored; }
 	void PassingTime(int time = 1);
+};
+
+
+class Dog : public Pet
+{
+
+};
+
+class Cat : public Pet
+{
+
+};
+
+class Hamster : public Pet
+{
+
 };
 
 #endif // !PET_H

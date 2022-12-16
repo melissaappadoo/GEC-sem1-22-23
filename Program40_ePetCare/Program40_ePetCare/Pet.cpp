@@ -18,6 +18,23 @@ Pet::~Pet()
 void Pet::Talk()
 {
 	int mood = petPtr->GetMood();
+	if (mood > 15) 
+	{
+		cout << "I am your pet and I feel mad" << endl;
+	}
+	else if (mood > 10 && mood < 15)
+	{
+		cout << "I am your pet and I feel frustrated" << endl;
+	}
+	else if (mood > 5 && mood < 10)
+	{
+		cout << "I am your pet and I feel okay" << endl;
+	}
+	else
+	{
+		cout << "I am your pet and I feel happy" << endl;
+	}
+	PassingTime();
 }
 
 void Pet::Feed(int food)
@@ -43,4 +60,6 @@ void Pet::Play(int fun)
 
 void Pet::PassingTime(int time)
 {
+	m_hunger += time;
+	m_bored += time;
 }
